@@ -3,14 +3,14 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpeg') no-repeat center center fixed;
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
 }
 
-/* from Bulma to keep icons consisten */
+/* from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -62,7 +62,7 @@ body {
 
 /* -------------------------------- Media Queries */
 
-/* Override bootstrap to give slightly larger container on xl screens */
+/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
