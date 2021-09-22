@@ -60,6 +60,7 @@ body {
     background: #000 !important;
 }
 
+/* This overlay is used to cover up the background image in templates that extend base.html */
 .overlay {
 	height: 100%;
 	width: 100%;
