@@ -5,3 +5,14 @@
 #profile-update-form input::placeholder {
     color: #aab7c4;
 }
+
+/* Make all country options black except the first displayed option */
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+/* Make the first country option the same color as the placeholders text */
+#id_default_country option:first-child {
+    color: #aab7c4;
+}
