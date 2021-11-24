@@ -75,6 +75,7 @@ class StripeWH_Handler:
                 profile.save()
 
         order_exists = False
+        # Give the webhook time to find the order
         attempt = 1
         while attempt <= 5:
             try:
