@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<h1>My Wishlist</h1>
+
+{% if wishlist %}
+{% for product in wishlist.products.all %}
+<div class="container">
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{ product.name }}</h3>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><small class="text-muted">${{ product.price }}</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mb-5">
+    <a href="" class="btn btn-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Remove From wishlist</a>
+    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Add To Bag</a>
+</div>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<p class="mb-5">Your Wish list is empty</p>
+<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+<span class="icon">
+<i class="fas fa-chevron-left"></i>
+</span>
+<span class="text-uppercase">Keep Shopping</span>
+</a>
+{% endif %}
+
+{% endblock %}
+
+
+

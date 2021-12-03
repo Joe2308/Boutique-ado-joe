@@ -102,10 +102,14 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
+                            <div>
+                                <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Add To wishlist</a>
+                            </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
