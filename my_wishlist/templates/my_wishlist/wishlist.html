@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="text-center mb-5">
-    <a href="" class="btn btn-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Remove From wishlist</a>
+    <a href="{% url 'remove_from_wishlist' product.id %}" class="btn btn-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Remove From wishlist</a>
     <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-5" role="button"><i class="far fa-star"></i> Add To Bag</a>
 </div>
   </div>
