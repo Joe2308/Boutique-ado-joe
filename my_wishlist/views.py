@@ -57,10 +57,14 @@ def remove_from_wishlist(request, product_id):
     profile = get_object_or_404(UserProfile, user=request.user)
 
     wishlist, created = Wishlist.objects.get_or_create(user=profile)
-    # Add product to the wishlist
     wishlist.products.remove(product)
     messages.success(request, 'product removed from wishlist')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    wishlist_count = Wishlist.objects.filter(user=profile).count()
+    if wishlist_count == 0:
+        Wishlist.remove(wishlist=wishlist, user=profile)
+        messages.success(request, 'All products removed from wishlist!')
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 # def add_to_wishlist(request, product_id):

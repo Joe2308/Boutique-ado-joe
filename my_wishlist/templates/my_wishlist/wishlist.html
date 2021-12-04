@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="overlay"></div>
-<h1>My Wishlist</h1>
+<h1 class='text-center mt-4'>My Wishlist</h1>
 
 {% if wishlist %}
 {% for product in wishlist.products.all %}
@@ -36,7 +36,8 @@
   </div>
 </div>
 {% endfor %}
-{% else %}
+{% endif %}
+{% if wishlist.products|length == 0 %}
 <p class="mb-5">Your Wish list is empty</p>
 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
 <span class="icon">
